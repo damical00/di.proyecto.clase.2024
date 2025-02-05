@@ -1,0 +1,104 @@
+﻿<Window x:Class="di.proyecto.clase._2024.Frontend.Dialogos.DialogoModeloArticuloMVC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:di.proyecto.clase._2024.Frontend.Dialogos"
+        mc:Ignorable="d"
+        Title="DialogoModeloArticuloMVC" Height="350" Width="550">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Grid.ColumnSpan="2" Grid.Row="0" Text="ALTA MODELO ARTICULO"
+                   Foreground="White"
+                   FontSize="20" HorizontalAlignment="Center"/>
+        
+        <TextBlock Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Text="Los campos con asteríscos son campos obligatorios"
+                   Foreground="White"
+                   Margin="5,15,0,15" />
+
+        <TextBox Grid.Row="2"
+                 Grid.Column="0"
+                 mat:HintAssist.Hint="Modelo del articulo *"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtModelo"
+                 Width="200" />
+
+        <TextBox Grid.Row="3"
+                 Grid.Column="0"
+                 mat:HintAssist.Hint="Nombre del Modelo *"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtNombreModelo"
+                 Width="200"
+                 />
+
+        <TextBox Grid.Row="2"
+                   Grid.Column="1"
+                 mat:HintAssist.Hint="Marca del Modelo *"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtmarcaModelo"
+                 Width="200"/>
+
+        <ComboBox mat:HintAssist.Hint="Tipo de articulo *"
+                  Foreground="White"
+                  Grid.Row="3"
+                  Grid.Column="1"
+                  x:Name="cbTipoArticulo"
+                  Text="Tipo de Articulo*"
+                  DisplayMemberPath="Nombre"
+                  Width="200" />
+
+
+
+        <TextBox Grid.Row="4"
+                 Grid.ColumnSpan="2"
+                 Text="Descripcion del Articulo"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 Width="400"
+                 x:Name="txtDescipcionModelo"/>
+
+        <Grid Grid.Row="5"
+                    Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+        <Button Grid.Column="0" Width="100"
+                    Height="50"
+                    Background="Transparent"
+                    BorderBrush="LightBlue">
+                <TextBlock Text="Cancelar"
+                           Foreground="LightBlue"/>
+        </Button>
+
+            <Button Grid.Column="1"
+                    Width="100"
+                    Click="btnGuardar_Click"
+                Height="50" Background="LightBlue" Margin="10,0,0,0">
+                <TextBlock Text="Guardar"
+                           Foreground="Black" />
+        </Button>
+            
+        </Grid>
+    </Grid>
+</Window>

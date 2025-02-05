@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="di.proyecto.clase._2024.Frontend.ControlUsuario.UCArticulo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:di.proyecto.clase._2024.Frontend.ControlUsuario"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="0">
+
+            <TextBlock Text="Filtrado por Espacio"
+                       Margin="10" />
+
+            <ComboBox x:Name="cbEspacio"
+                      Margin="10"
+                      ItemsSource="{Binding listaGrupos}"
+                      DisplayMemberPath="Nombre"
+                     
+                      SelectedItem="{Binding grupoSeleccionado}"
+                      mat:HintAssist.Hint="Selecciona un Espacio" />
+
+            <TextBox Text="Filtrar por fecha de alta: "
+                             x:Name="txtFechaAlta"
+                             VerticalAlignment="Center"
+                             Margin="20,10,0,10" />
+                <!-- 
+                <DatePicker x:Name="dpFechaAlta"
+                            Text="{Binding fechaInicial, UpdateSourceTrigger=PropertyChanged}"
+                            SelectedDate="{Binding fechaInicial}"
+                            Margin="0,0,10,0" />
+
+             
+
+                <TextBlock Text="Filtrar por fecha de baja: "
+                       VerticalAlignment="Center"
+                       Margin="20,10,0,10" />
+             
+            <DatePicker x:Name="dpFechaFinal"
+                            SelectedDate="{Binding fechaFinal}"
+                            Text="{Binding fechaFinal, UpdateSourceTrigger=PropertyChanged}" />
+            -->
+                <Button x:Name="botonFiltrar"
+                        Click="botonFiltrar_Click"
+                        Content="Filtrar" />
+            </StackPanel>
+            
+        </Grid>
+        <Grid Grid.Row="1">
+        <DataGrid x:Name="dgArticulo"
+                      ItemsSource="{Binding listaArticulosFiltro}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  ColumnWidth="*"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="NUM SERIE"
+                                    Binding="{Binding Numserie}" />
+
+
+                <DataGridTextColumn Header="ESTADO"
+                                Binding="{Binding Estado}" />
+            
+            <DataGridTextColumn Header="FECHA ALTA"
+                                Binding="{Binding Fechaalta}" />
+            
+            <DataGridTextColumn Header="FECHA BAJA"
+                                Binding="{Binding Fechabaja}" />
+            
+            <DataGridTextColumn Header="USUARIO ALTA"
+                                Binding="{Binding Numserie}" />
+            
+            <DataGridTextColumn Header="MODELO"
+                                Binding="{Binding ModeloNavigation.Nombre}" />
+            
+            <DataGridTextColumn Header="ESPACIO"
+                                Binding="{Binding Nombre}" />
+            
+            <DataGridTextColumn Header="DEPARTAMENTO"
+                                Binding="{Binding Fechabaja}" />
+
+            
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Editar"
+                              x:Name="miitemEditar"
+                              Click="mitemEditar_Click">
+                        <MenuItem.Icon>
+                            <mat:PackIcon Kind="Edit" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Eliminar">
+                        <MenuItem.Icon>
+                            <mat:PackIcon Kind="Delete"
+                                          Foreground="Red" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        
+    </Grid>
+</DockPanel>
+
+</UserControl>

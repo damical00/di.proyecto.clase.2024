@@ -1,0 +1,126 @@
+﻿<Window x:Class="di.proyecto.clase._2024.Frontend.Dialogos.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:di.proyecto.clase._2024.Frontend.Dialogos"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+    <Grid Background="#2b2a28">
+
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7,5*" />
+            <ColumnDefinition Width="2,5*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"
+                           MinHeight="100" />
+            <RowDefinition Height="Auto"
+                           MinHeight="42" />
+        </Grid.RowDefinitions>
+        <Rectangle VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Width="926"
+                   Height="238"
+                   Margin="-46,-184,0,0"
+                   RenderTransformOrigin="0.5,0.5"
+                   Grid.ColumnSpan="2">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="-3.673" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="1,0">
+                    <GradientStop Color="#d24335"
+                                  Offset="0" />
+                    <GradientStop Color="Orange"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBlock Text="IES MATISSE"
+                   Foreground="White"
+                   FontSize="40"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   Height="54"
+                   Margin="20,0,0,0" />
+        <TextBlock Grid.Row="1"
+                   Text="INVENTARIO MATISSE"
+                   Foreground="White"
+                   FontSize="30"
+                   Margin="20,40,0,27"
+                   Grid.RowSpan="2" />
+        <TextBlock Grid.Row="2"
+                   Text="Login"
+                   Foreground="White"
+                   FontSize="20"
+                   Margin="20,33,0,63"
+                   Grid.RowSpan="2" />
+
+        <TextBox Grid.Row="3"
+                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                 Margin="20,20,0,25"
+                 Foreground="White"
+                 Width="450"
+                 HorizontalAlignment="Left"
+                 x:Name="txtUsername">
+            <mat:HintAssist.Hint>Nombre de usuario</mat:HintAssist.Hint>
+        </TextBox>
+
+        <PasswordBox Grid.Row="6"
+                 Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
+                 Margin="20,6,0,42"
+                 Foreground="White"
+                 Width="450"
+                 HorizontalAlignment="Left"
+                 x:Name="passClaveAcceso">
+            <mat:HintAssist.Hint>Clave de acceso</mat:HintAssist.Hint>
+        </PasswordBox>
+        
+        <Button Background="Transparent"
+                BorderBrush="#d24335"
+                Foreground="Orange"
+                Grid.Row="6"
+                Width="100"
+                HorizontalAlignment="Left"
+                Margin="20,68,0,0"
+                Click="btnLogin_Click">Login</Button>
+
+        <Button Background="Transparent"
+                BorderBrush="Transparent"
+                Foreground="Orange"
+                Grid.Row="7"
+                Width="150"
+                FontSize="10"
+                HorizontalAlignment="Left"
+                Margin="20,10,0,0">¿Olvidaste tu contraseña?</Button>
+
+        <Image Grid.Column="1"
+               Source="/Iconos/matisse.png"
+               Margin="50,13,50,19"
+               Grid.RowSpan="6"
+               Grid.Row="2" />
+    </Grid>
+</Window>

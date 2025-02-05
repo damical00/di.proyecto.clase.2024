@@ -1,0 +1,204 @@
+﻿<Window x:Class="di.proyecto.clase._2024.MVVM.DialogoUsuarioMVVM"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:di.proyecto.clase._2024.MVVM"
+        mc:Ignorable="d"
+        Title="DialogoUsuarioMVVM" Height="600" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Grid.ColumnSpan="2"
+                   Grid.Row="0"
+                   Text="ALTA NUEVO USUARIO (MVVM)"
+                   Foreground="White"
+                   FontSize="20"
+                   HorizontalAlignment="Center" />
+
+        <TextBlock Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Text="Los campos con asteríscos son campos obligatorios"
+                   Foreground="White"
+                   Margin="5,15,0,15" />
+
+        <TextBox Grid.Row="2"
+                 Grid.Column="0"
+				 Text="{Binding usuario.username, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                 mat:HintAssist.Hint="Username *"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtUsername"
+                 Width="200" />
+
+        <PasswordBox Grid.Row="3"
+                Grid.Column="0"
+                mat:HintAssist.Hint="Password *"
+                Foreground="White"
+                Margin="5,15,0,15"
+                x:Name="txtPassword"
+                Width="200" />
+
+        <ComboBox mat:HintAssist.Hint="Tipo de usuario *"
+                  Foreground="White"
+				  Text="{Binding usuario.tipoUsuario, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                  ItemsSource="{Binding listaTiposUsuarios}"
+                  x:Name="tipoUsuario"
+                  SelectionChanged="ComboBox_SelectionChanged"
+                  IsEnabled="false"
+                  Grid.Row="4"
+                  Grid.Column="0"
+                  DisplayMemberPath="Nombre"
+                  Width="200" />
+
+        <ComboBox mat:HintAssist.Hint="Rol del usuario *"
+				  Text="{Binding usuario.rol, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                  ItemsSource="{Binding listRoles}"
+                  Foreground="White"
+                  Grid.Row="3"
+                  Grid.Column="1"
+                  x:Name="cbRolUsu"
+                  DisplayMemberPath="Nombre"
+                  Width="200" />
+
+        <ComboBox Grid.Row="4"
+                  Grid.Column="1"
+                  mat:HintAssist.Hint="Grupo"
+                  Foreground="White"
+                  Margin="5,15,0,15"
+                  x:Name="txtGrupo"
+                  Width="200" />
+
+        <ComboBox mat:HintAssist.Hint="Departamento"
+                  Foreground="White"
+                  Grid.Row="2"
+                  Grid.Column="1"
+                  x:Name="comboDepartamento"
+                  DisplayMemberPath="nombre"
+                  Width="200" />
+
+        <ComboBox mat:HintAssist.Hint="Tipo de articulo *"
+                  Foreground="White"
+                  Grid.Row="4"
+                  Grid.Column="0"
+				  x:Name="tipoArticuloCombo"
+                  Text="Tipo de Articulo*"
+                  DisplayMemberPath="Nombre"
+                  Width="200" />
+
+        <TextBox Grid.Row="5"
+                 Grid.Column="0"
+                 mat:HintAssist.Hint="Nombre"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtnombre"
+                 Width="200" />
+
+        <TextBox Grid.Row="5"
+                 Grid.Column="1"
+                 mat:HintAssist.Hint="Apellido1"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtapellido1"
+                 Width="200" />
+
+        <TextBox Grid.Row="6"
+                 Grid.Column="0"
+                 mat:HintAssist.Hint="Apellido2"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtapellido2"
+                 Width="200" />
+
+        <TextBox Grid.Row="6"
+                 Grid.Column="1"
+                 mat:HintAssist.Hint="Poblacion"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtpoblacion"
+                 Width="200" />
+
+        <TextBox Grid.Row="7"
+                 Grid.Column="0"
+                 mat:HintAssist.Hint="Domicilio"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtdomicilio"
+                 Width="200" />
+
+
+        <TextBox Grid.Row="7"
+                 Grid.Column="1"
+                 mat:HintAssist.Hint="Codigo postal"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtCodigoPostal"
+                 Width="200" />
+
+
+        <TextBox Grid.Row="8"
+                 Grid.Column="0"
+                 mat:HintAssist.Hint="Email"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtEmail"
+                 Width="200" />
+
+
+        <TextBox Grid.Row="8"
+                 Grid.Column="1"
+                 mat:HintAssist.Hint="Telefono"
+                 Foreground="White"
+                 Margin="5,15,0,15"
+                 x:Name="txtTelefono"
+                 Width="200" />
+
+
+        <Grid Grid.Row="10"
+              Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    Width="100"
+                    Height="50"
+                    Background="Transparent"
+                    BorderBrush="OrangeRed"
+                    Click="btnCancelar_Click">
+
+                <TextBlock Text="Cancelar"
+                           Foreground="OrangeRed" />
+            </Button>
+
+            <Button Grid.Column="1"
+                    Width="100"
+                    x:Name="btnGuardar"
+                    Click="btnGuardar_Click"
+                    Height="50"
+                    Background="OrangeRed"
+                    Margin="10,0,0,0">
+                <TextBlock Text="Guardar"
+                           Foreground="Black" />
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
